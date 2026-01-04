@@ -1,0 +1,28 @@
+{
+  "smartWidgets": {
+    "enabled": true,
+    "native": true,
+    "ilm": {
+      "enabled": true,
+      "available": true,
+      "modelType": "slow",
+      "modelConfig": {
+        "useSlowModels": true,
+        "modelSpeed": "slow",
+        "costOptimized": true,
+        "timeout": 30000,
+        "retryAttempts": 3,
+        "modelOptions": {
+          "preferCheaper": true,
+          "allowLongerWait": true,
+          "batchProcessing": true
+        }
+      }
+    },
+    "settings": {
+      "autoEnable": true,
+      "fallbackToFast": false,
+      "preferSlowModels": true
+    }
+  }
+}

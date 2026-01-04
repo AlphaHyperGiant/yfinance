@@ -1,0 +1,62 @@
+name: Smart Widgets Ilm Configuration
+
+on:
+  workflow_dispatch:
+    inputs:
+      useSlowModels:
+        description: 'Use slow models'
+        required: false
+        default: 'true'
+        type: boolean
+      costOptimized:
+        description: 'Cost optimized mode'
+        required: false
+        default: 'true'
+        type: boolean
+  push:
+    branches:
+      - 'cursor/**'
+    paths:
+      - '.cursor/smart-widgets-config.json'
+      - 'scripts/enable-smart-widgets-ilm.sh'
+      - 'scripts/configure-slow-models.py'
+
+jobs:
+  configure-smart-widgets:
+    runs-on: ubuntu-latest
+    name: Configure Smart Widgets with Ilm
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      
+      - name: Configure Smart Widgets with Ilm (Slow Models)
+        run: |
+          python3 scripts/configure-slow-models.py \
+            useSlowModels=${{ github.event.inputs.useSlowModels || 'true' }} \
+            costOptimized=${{ github.event.inputs.costOptimized || 'true' }}
+      
+      - name: Enable Smart Widgets
+        run: |
+          chmod +x scripts/enable-smart-widgets-ilm.sh
+          bash scripts/enable-smart-widgets-ilm.sh
+      
+      - name: Validate Configuration
+        run: |
+          if [ -f .cursor/smart-widgets-config.json ]; then
+            python3 -m json.tool .cursor/smart-widgets-config.json > /dev/null
+            echo "✅ Configuration is valid"
+          else
+            echo "❌ Configuration file not found"
+            exit 1
+          fi
+      
+      - name: Display Configuration
+        run: |
+          echo "📋 Final Configuration:"
+          cat .cursor/smart-widgets-config.json | python3 -m json.tool
