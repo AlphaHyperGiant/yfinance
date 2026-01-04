@@ -1,0 +1,219 @@
+﻿:orphan:
+
+Ticker
+======
+
+.. currentmodule:: yfinance
+
+.. autoclass:: Ticker
+   :exclude-members: actions, analyst_price_targets, balance_sheet, balancesheet, calendar, capital_gains, cash_flow, cashflow, dividends, earnings, earnings_dates, earnings_estimate, earnings_history, eps_revisions, eps_trend, fast_info, financials, funds_data, growth_estimates, history_metadata, income_stmt, incomestmt, info, insider_purchases, insider_roster_holders, insider_transactions, institutional_holders, isin, major_holders, mutualfund_holders, news, options, quarterly_balance_sheet, quarterly_balancesheet, quarterly_cash_flow, quarterly_cashflow, quarterly_earnings, quarterly_financials, quarterly_income_stmt, quarterly_incomestmt, recommendations, recommendations_summary, revenue_estimate, sec_filings, shares, splits, sustainability, ttm_cash_flow, ttm_cashflow, ttm_financials, ttm_income_stmt, ttm_incomestmt, upgrades_downgrades
+
+   
+   
+   .. rubric:: Attributes
+   
+   
+   .. autoattribute:: actions
+      :noindex:
+   .. autoattribute:: analyst_price_targets
+      :noindex:
+   .. autoattribute:: balance_sheet
+      :noindex:
+   .. autoattribute:: balancesheet
+      :noindex:
+   .. autoattribute:: calendar
+      :noindex:
+   .. autoattribute:: capital_gains
+      :noindex:
+   .. autoattribute:: cash_flow
+      :noindex:
+   .. autoattribute:: cashflow
+      :noindex:
+   .. autoattribute:: dividends
+      :noindex:
+   .. autoattribute:: earnings
+      :noindex:
+   .. autoattribute:: earnings_dates
+      :noindex:
+   .. autoattribute:: earnings_estimate
+      :noindex:
+   .. autoattribute:: earnings_history
+      :noindex:
+   .. autoattribute:: eps_revisions
+      :noindex:
+   .. autoattribute:: eps_trend
+      :noindex:
+   .. autoattribute:: fast_info
+      :noindex:
+   .. autoattribute:: financials
+      :noindex:
+   .. autoattribute:: funds_data
+      :noindex:
+   .. autoattribute:: growth_estimates
+      :noindex:
+   .. autoattribute:: history_metadata
+      :noindex:
+   .. autoattribute:: income_stmt
+      :noindex:
+   .. autoattribute:: incomestmt
+      :noindex:
+   .. autoattribute:: info
+      :noindex:
+   .. autoattribute:: insider_purchases
+      :noindex:
+   .. autoattribute:: insider_roster_holders
+      :noindex:
+   .. autoattribute:: insider_transactions
+      :noindex:
+   .. autoattribute:: institutional_holders
+      :noindex:
+   .. autoattribute:: isin
+      :noindex:
+   .. autoattribute:: major_holders
+      :noindex:
+   .. autoattribute:: mutualfund_holders
+      :noindex:
+   .. autoattribute:: news
+      :noindex:
+   .. autoattribute:: options
+      :noindex:
+   .. autoattribute:: quarterly_balance_sheet
+      :noindex:
+   .. autoattribute:: quarterly_balancesheet
+      :noindex:
+   .. autoattribute:: quarterly_cash_flow
+      :noindex:
+   .. autoattribute:: quarterly_cashflow
+      :noindex:
+   .. autoattribute:: quarterly_earnings
+      :noindex:
+   .. autoattribute:: quarterly_financials
+      :noindex:
+   .. autoattribute:: quarterly_income_stmt
+      :noindex:
+   .. autoattribute:: quarterly_incomestmt
+      :noindex:
+   .. autoattribute:: recommendations
+      :noindex:
+   .. autoattribute:: recommendations_summary
+      :noindex:
+   .. autoattribute:: revenue_estimate
+      :noindex:
+   .. autoattribute:: sec_filings
+      :noindex:
+   .. autoattribute:: shares
+      :noindex:
+   .. autoattribute:: splits
+      :noindex:
+   .. autoattribute:: sustainability
+      :noindex:
+   .. autoattribute:: ttm_cash_flow
+      :noindex:
+   .. autoattribute:: ttm_cashflow
+      :noindex:
+   .. autoattribute:: ttm_financials
+      :noindex:
+   .. autoattribute:: ttm_income_stmt
+      :noindex:
+   .. autoattribute:: ttm_incomestmt
+      :noindex:
+   .. autoattribute:: upgrades_downgrades
+      :noindex:
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   
+   .. automethod:: __init__
+      :noindex:
+   .. automethod:: get_actions
+      :noindex:
+   .. automethod:: get_analyst_price_targets
+      :noindex:
+   .. automethod:: get_balance_sheet
+      :noindex:
+   .. automethod:: get_balancesheet
+      :noindex:
+   .. automethod:: get_calendar
+      :noindex:
+   .. automethod:: get_capital_gains
+      :noindex:
+   .. automethod:: get_cash_flow
+      :noindex:
+   .. automethod:: get_cashflow
+      :noindex:
+   .. automethod:: get_dividends
+      :noindex:
+   .. automethod:: get_earnings
+      :noindex:
+   .. automethod:: get_earnings_dates
+      :noindex:
+   .. automethod:: get_earnings_estimate
+      :noindex:
+   .. automethod:: get_earnings_history
+      :noindex:
+   .. automethod:: get_eps_revisions
+      :noindex:
+   .. automethod:: get_eps_trend
+      :noindex:
+   .. automethod:: get_fast_info
+      :noindex:
+   .. automethod:: get_financials
+      :noindex:
+   .. automethod:: get_funds_data
+      :noindex:
+   .. automethod:: get_growth_estimates
+      :noindex:
+   .. automethod:: get_history_metadata
+      :noindex:
+   .. automethod:: get_income_stmt
+      :noindex:
+   .. automethod:: get_incomestmt
+      :noindex:
+   .. automethod:: get_info
+      :noindex:
+   .. automethod:: get_insider_purchases
+      :noindex:
+   .. automethod:: get_insider_roster_holders
+      :noindex:
+   .. automethod:: get_insider_transactions
+      :noindex:
+   .. automethod:: get_institutional_holders
+      :noindex:
+   .. automethod:: get_isin
+      :noindex:
+   .. automethod:: get_major_holders
+      :noindex:
+   .. automethod:: get_mutualfund_holders
+      :noindex:
+   .. automethod:: get_news
+      :noindex:
+   .. automethod:: get_recommendations
+      :noindex:
+   .. automethod:: get_recommendations_summary
+      :noindex:
+   .. automethod:: get_revenue_estimate
+      :noindex:
+   .. automethod:: get_sec_filings
+      :noindex:
+   .. automethod:: get_shares
+      :noindex:
+   .. automethod:: get_shares_full
+      :noindex:
+   .. automethod:: get_splits
+      :noindex:
+   .. automethod:: get_sustainability
+      :noindex:
+   .. automethod:: get_upgrades_downgrades
+      :noindex:
+   .. automethod:: history
+      :noindex:
+   .. automethod:: live
+      :noindex:
+   .. automethod:: option_chain
+      :noindex:
+   
+   

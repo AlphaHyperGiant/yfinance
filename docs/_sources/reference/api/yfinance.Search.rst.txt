@@ -1,0 +1,43 @@
+﻿:orphan:
+
+Search
+======
+
+.. currentmodule:: yfinance
+
+.. autoclass:: Search
+   :exclude-members: all, lists, nav, news, quotes, research, response
+
+   
+   
+   .. rubric:: Attributes
+   
+   
+   .. autoattribute:: all
+      :noindex:
+   .. autoattribute:: lists
+      :noindex:
+   .. autoattribute:: nav
+      :noindex:
+   .. autoattribute:: news
+      :noindex:
+   .. autoattribute:: quotes
+      :noindex:
+   .. autoattribute:: research
+      :noindex:
+   .. autoattribute:: response
+      :noindex:
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   
+   .. automethod:: __init__
+      :noindex:
+   .. automethod:: search
+      :noindex:
+   
+   

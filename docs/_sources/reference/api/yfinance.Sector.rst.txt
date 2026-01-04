@@ -1,0 +1,47 @@
+﻿:orphan:
+
+Sector
+======
+
+.. currentmodule:: yfinance
+
+.. autoclass:: Sector
+   :exclude-members: industries, key, name, overview, research_reports, symbol, ticker, top_companies, top_etfs, top_mutual_funds
+
+   
+   
+   .. rubric:: Attributes
+   
+   
+   .. autoattribute:: industries
+      :noindex:
+   .. autoattribute:: key
+      :noindex:
+   .. autoattribute:: name
+      :noindex:
+   .. autoattribute:: overview
+      :noindex:
+   .. autoattribute:: research_reports
+      :noindex:
+   .. autoattribute:: symbol
+      :noindex:
+   .. autoattribute:: ticker
+      :noindex:
+   .. autoattribute:: top_companies
+      :noindex:
+   .. autoattribute:: top_etfs
+      :noindex:
+   .. autoattribute:: top_mutual_funds
+      :noindex:
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   
+   .. automethod:: __init__
+      :noindex:
+   
+   

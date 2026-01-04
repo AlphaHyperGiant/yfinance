@@ -1,0 +1,1028 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>EquityQuery &#8212; yfinance</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/yfinance.css?v=6f22274e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/api/yfinance.EquityQuery';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="FundQuery" href="yfinance.FundQuery.html" />
+    <link rel="prev" title="Screener &amp; Query" href="../yfinance.screener.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo-light.webp" class="logo__image only-light" alt="yfinance - Home"/>
+    <script>document.write(`<img src="../../_static/logo-dark.webp" class="logo__image only-dark" alt="yfinance - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../advanced/index.html">
+    Advanced
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../development/index.html">
+    Development
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ranaroussi/yfinance" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../advanced/index.html">
+    Advanced
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../development/index.html">
+    Development
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ranaroussi/yfinance" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../yfinance.ticker_tickers.html">Ticker and Tickers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.html">Ticker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Tickers.html">Tickers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../yfinance.stock.html">Stock</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_isin.html">yfinance.Ticker.get_isin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.isin.html">yfinance.Ticker.isin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.history.html">yfinance.Ticker.history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_history_metadata.html">yfinance.Ticker.get_history_metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_dividends.html">yfinance.Ticker.get_dividends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.dividends.html">yfinance.Ticker.dividends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_splits.html">yfinance.Ticker.get_splits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.splits.html">yfinance.Ticker.splits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_actions.html">yfinance.Ticker.get_actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.actions.html">yfinance.Ticker.actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_capital_gains.html">yfinance.Ticker.get_capital_gains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.capital_gains.html">yfinance.Ticker.capital_gains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_shares_full.html">yfinance.Ticker.get_shares_full</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_info.html">yfinance.Ticker.get_info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.info.html">yfinance.Ticker.info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_fast_info.html">yfinance.Ticker.get_fast_info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.fast_info.html">yfinance.Ticker.fast_info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_news.html">yfinance.Ticker.get_news</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.news.html">yfinance.Ticker.news</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../yfinance.market.html">Market</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Market.html">Market</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../yfinance.calendars.html">Calendars</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Calendars.html">Calendars</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../yfinance.financials.html">Financials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_income_stmt.html">yfinance.Ticker.get_income_stmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.income_stmt.html">yfinance.Ticker.income_stmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.quarterly_income_stmt.html">yfinance.Ticker.quarterly_income_stmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.ttm_income_stmt.html">yfinance.Ticker.ttm_income_stmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_balance_sheet.html">yfinance.Ticker.get_balance_sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.balance_sheet.html">yfinance.Ticker.balance_sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_cashflow.html">yfinance.Ticker.get_cashflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.cashflow.html">yfinance.Ticker.cashflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.quarterly_cashflow.html">yfinance.Ticker.quarterly_cashflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.ttm_cashflow.html">yfinance.Ticker.ttm_cashflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_earnings.html">yfinance.Ticker.get_earnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.earnings.html">yfinance.Ticker.earnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.calendar.html">yfinance.Ticker.calendar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_earnings_dates.html">yfinance.Ticker.get_earnings_dates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.earnings_dates.html">yfinance.Ticker.earnings_dates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_sec_filings.html">yfinance.Ticker.get_sec_filings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.sec_filings.html">yfinance.Ticker.sec_filings</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../yfinance.analysis.html">Analysis &amp; Holdings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_recommendations.html">yfinance.Ticker.get_recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.recommendations.html">yfinance.Ticker.recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_recommendations_summary.html">yfinance.Ticker.get_recommendations_summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.recommendations_summary.html">yfinance.Ticker.recommendations_summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_upgrades_downgrades.html">yfinance.Ticker.get_upgrades_downgrades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.upgrades_downgrades.html">yfinance.Ticker.upgrades_downgrades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_sustainability.html">yfinance.Ticker.get_sustainability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.sustainability.html">yfinance.Ticker.sustainability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_analyst_price_targets.html">yfinance.Ticker.get_analyst_price_targets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.analyst_price_targets.html">yfinance.Ticker.analyst_price_targets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_earnings_estimate.html">yfinance.Ticker.get_earnings_estimate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.earnings_estimate.html">yfinance.Ticker.earnings_estimate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_revenue_estimate.html">yfinance.Ticker.get_revenue_estimate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.revenue_estimate.html">yfinance.Ticker.revenue_estimate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_earnings_history.html">yfinance.Ticker.get_earnings_history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.earnings_history.html">yfinance.Ticker.earnings_history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_eps_trend.html">yfinance.Ticker.get_eps_trend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.eps_trend.html">yfinance.Ticker.eps_trend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_eps_revisions.html">yfinance.Ticker.get_eps_revisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.eps_revisions.html">yfinance.Ticker.eps_revisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_growth_estimates.html">yfinance.Ticker.get_growth_estimates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.growth_estimates.html">yfinance.Ticker.growth_estimates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_funds_data.html">yfinance.Ticker.get_funds_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.funds_data.html">yfinance.Ticker.funds_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_insider_purchases.html">yfinance.Ticker.get_insider_purchases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.insider_purchases.html">yfinance.Ticker.insider_purchases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_insider_transactions.html">yfinance.Ticker.get_insider_transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.insider_transactions.html">yfinance.Ticker.insider_transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_insider_roster_holders.html">yfinance.Ticker.get_insider_roster_holders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.insider_roster_holders.html">yfinance.Ticker.insider_roster_holders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_major_holders.html">yfinance.Ticker.get_major_holders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.major_holders.html">yfinance.Ticker.major_holders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_institutional_holders.html">yfinance.Ticker.get_institutional_holders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.institutional_holders.html">yfinance.Ticker.institutional_holders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.get_mutualfund_holders.html">yfinance.Ticker.get_mutualfund_holders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Ticker.mutualfund_holders.html">yfinance.Ticker.mutualfund_holders</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../yfinance.search.html">Search &amp; Lookup</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Search.html">Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Lookup.html">Lookup</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../yfinance.websocket.html">WebSocket</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.WebSocket.html">WebSocket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.AsyncWebSocket.html">AsyncWebSocket</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../yfinance.sector_industry.html">Sector and Industry</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Sector.html">Sector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.Industry.html">Industry</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../yfinance.screener.html">Screener &amp; Query</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">EquityQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.FundQuery.html">FundQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.screen.html">yfinance.screen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../yfinance.functions.html">Functions and Utilities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.download.html">yfinance.download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.enable_debug_mode.html">yfinance.enable_debug_mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.set_tz_cache_location.html">yfinance.set_tz_cache_location</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../yfinance.funds_data.html"><cite>FundsData</cite> class</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yfinance.scrapers.funds.FundsData.html">FundsData</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../yfinance.price_history.html"><cite>PriceHistory</cite> class</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../yfinance.screener.html" class="nav-link">Screener &amp; Query</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">EquityQuery</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="equityquery">
+<h1>EquityQuery<a class="headerlink" href="#equityquery" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="yfinance.EquityQuery">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">yfinance.</span></span><span class="sig-name descname"><span class="pre">EquityQuery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operand</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">QueryBase</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Real</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#yfinance.EquityQuery" title="Link to this definition">#</a></dt>
+<dd><p>The <cite>EquityQuery</cite> class constructs filters for stocks based on specific criteria such as region, sector, exchange, and peer group.</p>
+<p>Start with value operations: <cite>EQ</cite> (equals), <cite>IS-IN</cite> (is in), <cite>BTWN</cite> (between), <cite>GT</cite> (greater than), <cite>LT</cite> (less than), <cite>GTE</cite> (greater or equal), <cite>LTE</cite> (less or equal).</p>
+<p>Combine them with logical operations: <cite>AND</cite>, <cite>OR</cite>.</p>
+<p class="rubric">Example</p>
+<p>Predefined Yahoo query <cite>aggressive_small_caps</cite>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">yfinance</span><span class="w"> </span><span class="kn">import</span> <span class="n">EquityQuery</span>
+
+<span class="n">EquityQuery</span><span class="p">(</span><span class="s1">&#39;and&#39;</span><span class="p">,</span> <span class="p">[</span>
+    <span class="n">EquityQuery</span><span class="p">(</span><span class="s1">&#39;is-in&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;exchange&#39;</span><span class="p">,</span> <span class="s1">&#39;NMS&#39;</span><span class="p">,</span> <span class="s1">&#39;NYQ&#39;</span><span class="p">]),</span>
+    <span class="n">EquityQuery</span><span class="p">(</span><span class="s1">&#39;lt&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;epsgrowth.lasttwelvemonths&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">])</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+<p class="rubric">Attributes</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">valid_fields</span></span></dt>
+<dd><p>Valid operands, grouped by category.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id1">
+<caption><span class="caption-text">Permitted Keys/Values</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Values</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>eq_fields</p></td>
+<td><ul class="simple">
+<li><p>exchange</p></li>
+<li><p>industry</p></li>
+<li><p>peer_group</p></li>
+<li><p>region</p></li>
+<li><p>sector</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>price</p></td>
+<td><ul class="simple">
+<li><p>eodprice</p></li>
+<li><p>fiftytwowkpercentchange</p></li>
+<li><p>intradaymarketcap</p></li>
+<li><p>intradayprice</p></li>
+<li><p>intradaypricechange</p></li>
+<li><p>lastclose52weekhigh.lasttwelvemonths</p></li>
+<li><p>lastclose52weeklow.lasttwelvemonths</p></li>
+<li><p>lastclosemarketcap.lasttwelvemonths</p></li>
+<li><p>percentchange</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>trading</p></td>
+<td><ul class="simple">
+<li><p>avgdailyvol3m</p></li>
+<li><p>beta</p></li>
+<li><p>dayvolume</p></li>
+<li><p>eodvolume</p></li>
+<li><p>pctheldinsider</p></li>
+<li><p>pctheldinst</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>short_interest</p></td>
+<td><ul class="simple">
+<li><p>days_to_cover_short.value</p></li>
+<li><p>short_interest.value</p></li>
+<li><p>short_interest_percentage_change.value</p></li>
+<li><p>short_percentage_of_float.value</p></li>
+<li><p>short_percentage_of_shares_outstanding.value</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>valuation</p></td>
+<td><ul class="simple">
+<li><p>bookvalueshare.lasttwelvemonths</p></li>
+<li><p>lastclosemarketcaptotalrevenue.lasttwelvemonths</p></li>
+<li><p>lastclosepriceearnings.lasttwelvemonths</p></li>
+<li><p>lastclosepricetangiblebookvalue.lasttwelvemonths</p></li>
+<li><p>lastclosetevtotalrevenue.lasttwelvemonths</p></li>
+<li><p>pegratio_5y</p></li>
+<li><p>peratio.lasttwelvemonths</p></li>
+<li><p>pricebookratio.quarterly</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>profitability</p></td>
+<td><ul class="simple">
+<li><p>consecutive_years_of_dividend_growth_count</p></li>
+<li><p>forward_dividend_per_share</p></li>
+<li><p>forward_dividend_yield</p></li>
+<li><p>returnonassets.lasttwelvemonths</p></li>
+<li><p>returnonequity.lasttwelvemonths</p></li>
+<li><p>returnontotalcapital.lasttwelvemonths</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>leverage</p></td>
+<td><ul class="simple">
+<li><p>ebitdainterestexpense.lasttwelvemonths</p></li>
+<li><p>ebitinterestexpense.lasttwelvemonths</p></li>
+<li><p>lastclosetevebit.lasttwelvemonths</p></li>
+<li><p>lastclosetevebitda.lasttwelvemonths</p></li>
+<li><p>ltdebtequity.lasttwelvemonths</p></li>
+<li><p>netdebtebitda.lasttwelvemonths</p></li>
+<li><p>totaldebtebitda.lasttwelvemonths</p></li>
+<li><p>totaldebtequity.lasttwelvemonths</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>liquidity</p></td>
+<td><ul class="simple">
+<li><p>altmanzscoreusingtheaveragestockinformationforaperiod.lasttwelvemonths</p></li>
+<li><p>currentratio.lasttwelvemonths</p></li>
+<li><p>operatingcashflowtocurrentliabilities.lasttwelvemonths</p></li>
+<li><p>quickratio.lasttwelvemonths</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>income_statement</p></td>
+<td><ul class="simple">
+<li><p>basicepscontinuingoperations.lasttwelvemonths</p></li>
+<li><p>dilutedeps1yrgrowth.lasttwelvemonths</p></li>
+<li><p>dilutedepscontinuingoperations.lasttwelvemonths</p></li>
+<li><p>ebit.lasttwelvemonths</p></li>
+<li><p>ebitda.lasttwelvemonths</p></li>
+<li><p>ebitda1yrgrowth.lasttwelvemonths</p></li>
+<li><p>ebitdamargin.lasttwelvemonths</p></li>
+<li><p>epsgrowth.lasttwelvemonths</p></li>
+<li><p>grossprofit.lasttwelvemonths</p></li>
+<li><p>grossprofitmargin.lasttwelvemonths</p></li>
+<li><p>netepsbasic.lasttwelvemonthsnetepsdiluted.lasttwelvemonths</p></li>
+<li><p>netincome1yrgrowth.lasttwelvemonths</p></li>
+<li><p>netincomeis.lasttwelvemonths</p></li>
+<li><p>netincomemargin.lasttwelvemonths</p></li>
+<li><p>operatingincome.lasttwelvemonths</p></li>
+<li><p>quarterlyrevenuegrowth.quarterly</p></li>
+<li><p>totalrevenues.lasttwelvemonths</p></li>
+<li><p>totalrevenues1yrgrowth.lasttwelvemonths</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>balance_sheet</p></td>
+<td><ul class="simple">
+<li><p>totalassets.lasttwelvemonths</p></li>
+<li><p>totalcashandshortterminvestments.lasttwelvemonths</p></li>
+<li><p>totalcommonequity.lasttwelvemonths</p></li>
+<li><p>totalcommonsharesoutstanding.lasttwelvemonths</p></li>
+<li><p>totalcurrentassets.lasttwelvemonths</p></li>
+<li><p>totalcurrentliabilities.lasttwelvemonths</p></li>
+<li><p>totaldebt.lasttwelvemonths</p></li>
+<li><p>totalequity.lasttwelvemonths</p></li>
+<li><p>totalsharesoutstanding</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>cash_flow</p></td>
+<td><ul class="simple">
+<li><p>capitalexpenditure.lasttwelvemonths</p></li>
+<li><p>cashfromoperations.lasttwelvemonths</p></li>
+<li><p>cashfromoperations1yrgrowth.lasttwelvemonths</p></li>
+<li><p>forward_dividend_yield</p></li>
+<li><p>leveredfreecashflow.lasttwelvemonths</p></li>
+<li><p>leveredfreecashflow1yrgrowth.lasttwelvemonths</p></li>
+<li><p>unleveredfreecashflow.lasttwelvemonths</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>esg</p></td>
+<td><ul class="simple">
+<li><p>environmental_score</p></li>
+<li><p>esg_score</p></li>
+<li><p>governance_score</p></li>
+<li><p>highest_controversy</p></li>
+<li><p>social_score</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">valid_values</span></span></dt>
+<dd><p>Most operands take number values, but some have a restricted set of valid values.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id2">
+<caption><span class="caption-text">Permitted Keys/Values</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Values</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>region</p></td>
+<td><p>ar, at, au, be, br, ca, ch, cl, cn, co, cz, de, dk, ee, eg, es, fi, fr, gb, gr, hk, hu, id, ie, il, in, is, it, jp, kr, kw, lk, lt, lv, mx, my, nl, no, nz, pe, ph, pk, pl, pt, qa, ro, ru, sa, se, sg, sr, sw, th, tr, tw, us, ve, vn, za</p></td>
+</tr>
+<tr class="row-odd"><td><p>exchange</p></td>
+<td><div class="line-block">
+<div class="line">ar: BUE.  at: VIE.  au: ASX.  be: BRU</div>
+<div class="line">br: SAO.  ca: CNQ, NEO, TOR, VAN</div>
+<div class="line">ch: EBS.  cl: SGO.  cn: SHH, SHZ</div>
+<div class="line">co: BVC.  cz: PRA</div>
+<div class="line">de: BER, DUS, FRA, GER, HAM, MUN, STU</div>
+<div class="line">dk: CPH.  ee: TAL.  eg: CAI.  es: MCE</div>
+<div class="line">fi: HEL.  fr: PAR.  gb: AQS, IOB, LSE</div>
+<div class="line">gr: ATH.  hk: HKG.  hu: BUD.  id: JKT</div>
+<div class="line">ie: ISE.  il: TLV.  in: BSE, NSI</div>
+<div class="line">is: ICE.  it: MIL.  jp: FKA, JPX, SAP</div>
+<div class="line">kr: KOE, KSC.  kw: KUW.  lk:</div>
+<div class="line">lt: LIT.  lv: RIS.  mx: MEX.  my: KLS</div>
+<div class="line">nl: AMS.  no: OSL.  nz: NZE.  pe:</div>
+<div class="line">ph: PHP, PHS.  pk: .  pl: WSE</div>
+<div class="line">pt: LIS.  qa: DOH.  ro: BVB.  ru:</div>
+<div class="line">sa: SAU.  se: STO.  sg: SES.  sr:</div>
+<div class="line">sw: EBS.  th: SET.  tr: IST</div>
+<div class="line">tw: TAI, TWO</div>
+<div class="line">us: ASE, BTS, CXI, NCM, NGM, NMS, NYQ, OEM, OQB, OQX, PCX, PNK, YHD</div>
+<div class="line">ve: CCS.  vn: .  za: JNB</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>sector</p></td>
+<td><ul class="simple">
+<li><p>Basic Materials</p></li>
+<li><p>Communication Services</p></li>
+<li><p>Consumer Cyclical</p></li>
+<li><p>Consumer Defensive</p></li>
+<li><p>Energy</p></li>
+<li><p>Financial Services</p></li>
+<li><p>Healthcare</p></li>
+<li><p>Industrials</p></li>
+<li><p>Real Estate</p></li>
+<li><p>Technology</p></li>
+<li><p>Utilities</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>industry</p></td>
+<td><div class="line-block">
+<div class="line">Basic Materials: Agricultural Inputs, Aluminum, Building Materials, Chemicals, Coking Coal, Copper, Gold, Lumber &amp; Wood Production, Other Industrial Metals &amp; Mining, Other Precious Metals &amp; Mining, Paper &amp; Paper Products, Silver, Specialty Chemicals, Steel</div>
+<div class="line">Communication Services: Advertising Agencies, Broadcasting, Electronic Gaming &amp; Multimedia, Entertainment, Internet Content &amp; Information, Publishing, Telecom Services</div>
+<div class="line">Consumer Cyclical: Apparel Manufacturing, Apparel Retail, Auto &amp; Truck Dealerships, Auto Manufacturers, Auto Parts, Department Stores, Footwear &amp; Accessories, Furnishings, Fixtures &amp; Appliances, Gambling, Home Improvement Retail, Internet Retail, Leisure, Lodging, Luxury Goods, Packaging &amp; Containers, Personal Services, Recreational Vehicles, Residential Construction, Resorts &amp; Casinos, Restaurants, Specialty Retail, Textile Manufacturing, Travel Services</div>
+<div class="line">Consumer Defensive: Beverages—Brewers, Beverages—Non-Alcoholic, Beverages—Wineries &amp; Distilleries, Confectioners, Discount Stores, Education &amp; Training Services, Farm Products, Food Distribution, Grocery Stores, Household &amp; Personal Products, Packaged Foods, Tobacco</div>
+<div class="line">Energy: Oil &amp; Gas Drilling, Oil &amp; Gas E&amp;P, Oil &amp; Gas Equipment &amp; Services, Oil &amp; Gas Integrated, Oil &amp; Gas Midstream, Oil &amp; Gas Refining &amp; Marketing, Thermal Coal, Uranium</div>
+<div class="line">Financial Services: Asset Management, Banks—Diversified, Banks—Regional, Capital Markets, Credit Services, Financial Conglomerates, Financial Data &amp; Stock Exchanges, Insurance Brokers, Insurance—Diversified, Insurance—Life, Insurance—Property &amp; Casualty, Insurance—Reinsurance, Insurance—Specialty, Mortgage Finance, Shell Companies</div>
+<div class="line">Healthcare: Biotechnology, Diagnostics &amp; Research, Drug Manufacturers—General, Drug Manufacturers—Specialty &amp; Generic, Health Information Services, Healthcare Plans, Medical Care Facilities, Medical Devices, Medical Distribution, Medical Instruments &amp; Supplies, Pharmaceutical Retailers</div>
+<div class="line">Industrials: Aerospace &amp; Defense, Airlines, Airports &amp; Air Services, Building Products &amp; Equipment, Business Equipment &amp; Supplies, Conglomerates, Consulting Services, Electrical Equipment &amp; Parts, Engineering &amp; Construction, Farm &amp; Heavy Construction Machinery, Industrial Distribution, Infrastructure Operations, Integrated Freight &amp; Logistics, Marine Shipping, Metal Fabrication, Pollution &amp; Treatment Controls, Railroads, Rental &amp; Leasing Services, Security &amp; Protection Services, Specialty Business Services, Specialty Industrial Machinery, Staffing &amp; Employment Services, Tools &amp; Accessories, Trucking, Waste Management</div>
+<div class="line">Real Estate: REIT—Diversified, REIT—Healthcare Facilities, REIT—Hotel &amp; Motel, REIT—Industrial, REIT—Mortgage, REIT—Office, REIT—Residential, REIT—Retail, REIT—Specialty, Real Estate Services, Real Estate—Development, Real Estate—Diversified</div>
+<div class="line">Technology: Communication Equipment, Computer Hardware, Consumer Electronics, Electronic Components, Electronics &amp; Computer Distribution, Information Technology Services, Scientific &amp; Technical Instruments, Semiconductor Equipment &amp; Materials, Semiconductors, Software—Application, Software—Infrastructure, Solar</div>
+<div class="line">Utilities: Utilities—Diversified, Utilities—Independent Power Producers, Utilities—Regulated Electric, Utilities—Regulated Gas, Utilities—Regulated Water, Utilities—Renewable</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>peer_group</p></td>
+<td><ul class="simple">
+<li><p>Aerospace &amp; Defense</p></li>
+<li><p>Auto Components</p></li>
+<li><p>Automobiles</p></li>
+<li><p>Banks</p></li>
+<li><p>Building Products</p></li>
+<li><p>Chemicals</p></li>
+<li><p>China Fund Aggressive Allocation Fund</p></li>
+<li><p>China Fund Equity Funds</p></li>
+<li><p>China Fund QDII Greater China Equity</p></li>
+<li><p>China Fund QDII Sector Equity</p></li>
+<li><p>China Fund Sector Equity Financial and Real Estate</p></li>
+<li><p>Commercial Services</p></li>
+<li><p>Construction &amp; Engineering</p></li>
+<li><p>Construction Materials</p></li>
+<li><p>Consumer Durables</p></li>
+<li><p>Consumer Services</p></li>
+<li><p>Containers &amp; Packaging</p></li>
+<li><p>Diversified Financials</p></li>
+<li><p>Diversified Metals</p></li>
+<li><p>EAA CE Global Large-Cap Blend Equity</p></li>
+<li><p>EAA CE Other</p></li>
+<li><p>EAA CE Sector Equity Biotechnology</p></li>
+<li><p>EAA CE UK Large-Cap Equity</p></li>
+<li><p>EAA CE UK Small-Cap Equity</p></li>
+<li><p>EAA Fund Asia ex-Japan Equity</p></li>
+<li><p>EAA Fund China Equity</p></li>
+<li><p>EAA Fund China Equity - A Shares</p></li>
+<li><p>EAA Fund Denmark Equity</p></li>
+<li><p>EAA Fund EUR Aggressive Allocation - Global</p></li>
+<li><p>EAA Fund EUR Corporate Bond</p></li>
+<li><p>EAA Fund EUR Moderate Allocation - Global</p></li>
+<li><p>EAA Fund Emerging Europe ex-Russia Equity</p></li>
+<li><p>EAA Fund Europe Large-Cap Blend Equity</p></li>
+<li><p>EAA Fund Eurozone Large-Cap Equity</p></li>
+<li><p>EAA Fund Germany Equity</p></li>
+<li><p>EAA Fund Global Emerging Markets Equity</p></li>
+<li><p>EAA Fund Global Equity Income</p></li>
+<li><p>EAA Fund Global Flex-Cap Equity</p></li>
+<li><p>EAA Fund Global Large-Cap Blend Equity</p></li>
+<li><p>EAA Fund Global Large-Cap Growth Equity</p></li>
+<li><p>EAA Fund Hong Kong Equity</p></li>
+<li><p>EAA Fund Japan Large-Cap Equity</p></li>
+<li><p>EAA Fund Other Bond</p></li>
+<li><p>EAA Fund Other Equity</p></li>
+<li><p>EAA Fund RMB Bond - Onshore</p></li>
+<li><p>EAA Fund Sector Equity Consumer Goods &amp; Services</p></li>
+<li><p>EAA Fund Sector Equity Financial Services</p></li>
+<li><p>EAA Fund Sector Equity Industrial Materials</p></li>
+<li><p>EAA Fund Sector Equity Technology</p></li>
+<li><p>EAA Fund South Africa &amp; Namibia Equity</p></li>
+<li><p>EAA Fund Switzerland Equity</p></li>
+<li><p>EAA Fund US Large-Cap Blend Equity</p></li>
+<li><p>EAA Fund USD Corporate Bond</p></li>
+<li><p>Electrical Equipment</p></li>
+<li><p>Energy Services</p></li>
+<li><p>Food Products</p></li>
+<li><p>Food Retailers</p></li>
+<li><p>Healthcare</p></li>
+<li><p>Homebuilders</p></li>
+<li><p>Household Products</p></li>
+<li><p>India CE Multi-Cap</p></li>
+<li><p>India Fund Large-Cap</p></li>
+<li><p>India Fund Sector - Financial Services</p></li>
+<li><p>Industrial Conglomerates</p></li>
+<li><p>Insurance</p></li>
+<li><p>Machinery</p></li>
+<li><p>Media</p></li>
+<li><p>Mexico Fund Mexico Equity</p></li>
+<li><p>Oil &amp; Gas Producers</p></li>
+<li><p>Paper &amp; Forestry</p></li>
+<li><p>Pharmaceuticals</p></li>
+<li><p>Precious Metals</p></li>
+<li><p>Real Estate</p></li>
+<li><p>Refiners &amp; Pipelines</p></li>
+<li><p>Retailing</p></li>
+<li><p>Semiconductors</p></li>
+<li><p>Software &amp; Services</p></li>
+<li><p>Steel</p></li>
+<li><p>Technology Hardware</p></li>
+<li><p>Telecommunication Services</p></li>
+<li><p>Textiles &amp; Apparel</p></li>
+<li><p>Traders &amp; Distributors</p></li>
+<li><p>Transportation</p></li>
+<li><p>Transportation Infrastructure</p></li>
+<li><p>US CE Convertibles</p></li>
+<li><p>US CE Options-based</p></li>
+<li><p>US CE Preferred Stock</p></li>
+<li><p>US Fund China Region</p></li>
+<li><p>US Fund Consumer Cyclical</p></li>
+<li><p>US Fund Diversified Emerging Mkts</p></li>
+<li><p>US Fund Equity Energy</p></li>
+<li><p>US Fund Equity Precious Metals</p></li>
+<li><p>US Fund Financial</p></li>
+<li><p>US Fund Foreign Large Blend</p></li>
+<li><p>US Fund Health</p></li>
+<li><p>US Fund Large Blend</p></li>
+<li><p>US Fund Large Growth</p></li>
+<li><p>US Fund Large Value</p></li>
+<li><p>US Fund Miscellaneous Region</p></li>
+<li><p>US Fund Natural Resources</p></li>
+<li><p>US Fund Technology</p></li>
+<li><p>US Fund Trading–Leveraged Equity</p></li>
+<li><p>Utilities</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operand</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">QueryBase</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Real</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../yfinance.screener.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Screener &amp; Query</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="yfinance.FundQuery.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">FundQuery</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yfinance.EquityQuery"><code class="docutils literal notranslate"><span class="pre">EquityQuery</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/reference/api/yfinance.EquityQuery.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2017-2025 Ran Aroussi.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+﻿:orphan:
+
+Industry
+========
+
+.. currentmodule:: yfinance
+
+.. autoclass:: Industry
+   :exclude-members: key, name, overview, research_reports, sector_key, sector_name, symbol, ticker, top_companies, top_growth_companies, top_performing_companies
+
+   
+   
+   .. rubric:: Attributes
+   
+   
+   .. autoattribute:: key
+      :noindex:
+   .. autoattribute:: name
+      :noindex:
+   .. autoattribute:: overview
+      :noindex:
+   .. autoattribute:: research_reports
+      :noindex:
+   .. autoattribute:: sector_key
+      :noindex:
+   .. autoattribute:: sector_name
+      :noindex:
+   .. autoattribute:: symbol
+      :noindex:
+   .. autoattribute:: ticker
+      :noindex:
+   .. autoattribute:: top_companies
+      :noindex:
+   .. autoattribute:: top_growth_companies
+      :noindex:
+   .. autoattribute:: top_performing_companies
+      :noindex:
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   
+   .. automethod:: __init__
+      :noindex:
+   
+   

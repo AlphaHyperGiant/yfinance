@@ -1,0 +1,31 @@
+﻿:orphan:
+
+Tickers
+=======
+
+.. currentmodule:: yfinance
+
+.. autoclass:: Tickers
+   :exclude-members: 
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   
+   .. automethod:: __init__
+      :noindex:
+   .. automethod:: download
+      :noindex:
+   .. automethod:: history
+      :noindex:
+   .. automethod:: live
+      :noindex:
+   .. automethod:: news
+      :noindex:
+   
+   
