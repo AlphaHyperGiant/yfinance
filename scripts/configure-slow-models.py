@@ -5,7 +5,6 @@ This script manages the configuration for using slow/cost-optimized models.
 """
 
 import json
-import os
 import sys
 from pathlib import Path
 
