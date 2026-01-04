@@ -37,6 +37,14 @@ from .config import YfConfig as config
 from .screener.query import EquityQuery, FundQuery
 from .screener.screener import screen, PREDEFINED_SCREENER_QUERIES
 
+from .cashapp import (
+    CashAppPortfolio,
+    format_for_cashapp,
+    get_cashapp_watchlist,
+    calculate_dollar_cost_average,
+    get_cashapp_recommendations
+)
+
 __version__ = version.version
 __author__ = "Ran Aroussi"
 
@@ -46,6 +54,8 @@ warnings.filterwarnings('default', category=DeprecationWarning, module='^yfinanc
 __all__ = ['download', 'Market', 'Search', 'Lookup', 'Ticker', 'Tickers', 'enable_debug_mode', 'set_tz_cache_location', 'Sector', 'Industry', 'WebSocket', 'AsyncWebSocket', 'Calendars']
 # screener stuff:
 __all__ += ['EquityQuery', 'FundQuery', 'screen', 'PREDEFINED_SCREENER_QUERIES']
+# Cash App integration:
+__all__ += ['CashAppPortfolio', 'format_for_cashapp', 'get_cashapp_watchlist', 'calculate_dollar_cost_average', 'get_cashapp_recommendations']
 
 # Config stuff:
 _NOTSET=object()
