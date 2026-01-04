@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stock Portfolio Tracker - Track your investments across all devices">
+    <title>Stock Portfolio Tracker | $10 Marketplace Prototype</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>📈 Stock Portfolio Tracker</h1>
+                <p class="subtitle">Track your investments in real-time</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="search-section">
+                <div class="search-box">
+                    <input type="text" id="tickerInput" placeholder="Enter stock symbol (e.g., AAPL, MSFT, GOOGL)" autocomplete="off">
+                    <button id="addStockBtn" class="btn-primary">Add Stock</button>
+                </div>
+                <div id="errorMessage" class="error-message"></div>
+            </div>
+
+            <div class="portfolio-section">
+                <div class="portfolio-header">
+                    <h2>Your Portfolio</h2>
+                    <div class="portfolio-stats">
+                        <div class="stat">
+                            <span class="stat-label">Total Value</span>
+                            <span class="stat-value" id="totalValue">$0.00</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Total Change</span>
+                            <span class="stat-value" id="totalChange">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="portfolioGrid" class="portfolio-grid">
+                    <div class="empty-state">
+                        <p>👆 Add stocks to start tracking your portfolio</p>
+                        <p class="hint">Try: AAPL, MSFT, GOOGL, TSLA, AMZN</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-section" id="chartSection" style="display: none;">
+                <div class="chart-header">
+                    <h3 id="chartTitle">Price History</h3>
+                    <div class="chart-controls">
+                        <button class="period-btn active" data-period="5d">5D</button>
+                        <button class="period-btn" data-period="1mo">1M</button>
+                        <button class="period-btn" data-period="3mo">3M</button>
+                        <button class="period-btn" data-period="6mo">6M</button>
+                        <button class="period-btn" data-period="1y">1Y</button>
+                    </div>
+                </div>
+                <div id="chartContainer" class="chart-container">
+                    <canvas id="priceChart"></canvas>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Stock Portfolio Tracker - Marketplace Prototype ($10)</p>
+            <p class="disclaimer">Data provided by Yahoo Finance. For educational purposes only.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
