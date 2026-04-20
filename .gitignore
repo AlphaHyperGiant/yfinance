@@ -1,26 +1,48 @@
-__pycache__/*
-yfinance/__pycache__/*
-dist
-yfinance.egg-info
-*.pyc
-.coverage
-.idea/
-.vscode/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
 build/
-*.html
-*.css
-test.ipynb
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Environments
-.env
-.venv
-env/
+# Virtual Environment
 venv/
 ENV/
+env/
 
-# Documentation
-/doc/build/
-/doc/_build/
-/doc/source/reference/api
-!yfinance.css
-!/doc/source/development/assets/branches.png
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Flask
+instance/
+.webassets-cache
+
+# Environment variables
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
