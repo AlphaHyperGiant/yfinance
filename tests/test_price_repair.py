@@ -377,8 +377,10 @@ class TestPriceRepair(unittest.TestCase):
                 self.assertTrue(_np.isclose(repaired_df[c], correct_df[c], rtol=1e-7).all())
             except Exception:
                 print(f"# column = {c}")
-                print("# correct:") ; print(correct_df[c])
-                print("# repaired:") ; print(repaired_df[c])
+                print("# correct:")
+                print(correct_df[c])
+                print("# repaired:")
+                print(repaired_df[c])
                 raise
 
         self.assertTrue("Repaired?" in repaired_df.columns)
@@ -423,8 +425,10 @@ class TestPriceRepair(unittest.TestCase):
                         self.assertTrue(_np.isclose(df_slice_bad_repaired[c], df_slice[c], rtol=rtol).all())
                     except Exception:
                         print(f"# column = {c}")
-                        print("# correct:") ; print(df_slice[c])
-                        print("# repaired:") ; print(df_slice_bad_repaired[c])
+                        print("# correct:")
+                        print(df_slice[c])
+                        print("# repaired:")
+                        print(df_slice_bad_repaired[c])
                         raise
                 self.assertTrue("Repaired?" in df_slice_bad_repaired.columns)
                 self.assertFalse(df_slice_bad_repaired["Repaired?"].isna().any())
